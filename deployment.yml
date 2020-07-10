@@ -47,7 +47,7 @@ spec:
         tier: web
     spec:
       containers:
-      - image: pawnikhanna/webserver:v1
+      - image: httpd
         name: httpd-g-web
         ports:
         - containerPort: 80
