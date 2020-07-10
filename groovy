@@ -20,7 +20,7 @@ job('task6_Job2') {
         	github('pawnikhanna/devops_task6','master')
     		}
 	triggers {
-        		upstream('G Job1', 'SUCCESS')
+        		upstream('task6_Job1', 'SUCCESS')
     			}
 	steps {
        		shell('''
@@ -42,7 +42,7 @@ job('task6_Job2') {
 job('task6_Job3') {
     description('Job3')
 	triggers {
-        		upstream('G Job2', 'SUCCESS')
+        		upstream('task6_Job2', 'SUCCESS')
     			}
     steps {
        	shell('''
