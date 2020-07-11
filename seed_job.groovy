@@ -30,6 +30,8 @@ shell("""
 if sudo kubectl get all | grep apache
 then
 echo "service exist"
+sudo kubectl delete all --all
+sudo kubectl delete httpd-pv-claim1
 else
 sudo kubectl create -f /root/web/deployment.yml
 fi 
