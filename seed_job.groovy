@@ -31,10 +31,10 @@ if sudo kubectl get all | grep httpd
 then
 echo "PODS EXISTS,GOING TO DELETE IT"
 sudo kubectl delete all --all
+sudo kubectl delete httpd-pv-claim1
 else
 echo "POD DOES NOT EXISTS,GOING TO CREATE IT"
 sudo kubectl create -f /root/web/deployment.yml
-sudo kubectl expose deployment httpd --type=NodePort --port=80
 fi 
 sudo kubectl get all """)
 }
