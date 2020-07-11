@@ -27,7 +27,7 @@ job("task6_Job2")
 description ("Job2")
 steps{
 shell("""
-if sudo kubectl get all | grep apache
+if sudo kubectl get all | grep httpd
 then
 echo "service exist"
 sudo kubectl delete all --all
