@@ -29,11 +29,11 @@ steps{
 shell("""
 if sudo kubectl get all | grep httpd
 then
-echo "PODS EXISTS,GOING TO DELETE IT"
+echo "already exist"
 sudo kubectl delete all --all
 sudo kubectl delete httpd-pv-claim
 else
-echo "POD DOES NOT EXISTS,GOING TO CREATE IT"
+echo "create it"
 sudo kubectl create -f /root/web/deployment.yml
 fi 
 sudo kubectl get all
