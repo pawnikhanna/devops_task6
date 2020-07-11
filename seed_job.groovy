@@ -31,7 +31,6 @@ if sudo kubectl get all | grep httpd
 then
 echo "PODS EXISTS,GOING TO DELETE IT"
 sudo kubectl delete all --all
-sudo kubectl delete httpd-pv-claim1
 else
 echo "POD DOES NOT EXISTS,GOING TO CREATE IT"
 sudo kubectl create -f /root/web/deployment.yml
@@ -54,7 +53,7 @@ job("task6_Job3") {
 	        }
 	    }
 	steps {
-		shell("""status=\$(curl -sL -w "%{http_code}" -I "http://192.168.99.100:32351" -o /dev/null)
+		shell("""status=\$(curl -sL -w "%{http_code}" -I "http://192.168.99.100:30001" -o /dev/null)
 if [[ \$status == 200 ]]
 then
 exit 0
