@@ -15,7 +15,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: httpd-pv-claim
+  name: httpd-pv-claim1
   labels:
     app: httpd
 spec:
@@ -54,4 +54,4 @@ spec:
       volumes:
       - name: httpd-vol
         persistentVolumeClaim:
-          claimName: httpd-pv-claim
+          claimName: httpd-pv-claim1
