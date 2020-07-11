@@ -34,7 +34,7 @@ sudo kubectl delete all --all
 sudo kubectl delete httpd-pv-claim1
 else
 echo "POD DOES NOT EXISTS,GOING TO CREATE IT"
-sudo kubectl create -f /root/web/deploymment.yml
+sudo kubectl create -f /root/web/deployment.yml
 fi 
 sudo kubectl get all """)
 }
