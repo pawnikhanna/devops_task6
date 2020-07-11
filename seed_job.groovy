@@ -4,7 +4,7 @@ job('task6_Job1') {
         	github('pawnikhanna/task6_webcode','master')
     }
     steps {
-       		shell("cp * -vrf /root/web") 
+       		shell("sudo cp -rvf * /home/jenkins") 
      	}
   	triggers {
         	scm('* * * * *')
