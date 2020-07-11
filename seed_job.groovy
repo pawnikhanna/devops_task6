@@ -27,15 +27,14 @@ job("task6_Job2")
 description ("Job2")
 steps{
 shell("""
-if kubectl get pods | grep httpd
+if sudo kubectl get all | grep apache
 then
-echo "service is running"
+echo "service exist"
 else
-kubectl create -f /root/web/deployment.yml
-sleep 20
-fi
-POD=$(kubectl get pod -l app=httpd -o jsonpath="{.items[0].metadata.name}")
-kubectl cp /root/web/*.html $POD:/var/www/html/ """)
+sudo kubectl create -f /root/web/deployment.yml
+fi 
+sudo kubectl get all
+ """)
 }
 triggers {
    upstream('task6_Job1', 'SUCCESS')
