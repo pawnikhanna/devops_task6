@@ -43,7 +43,7 @@ spec:
         app: httpd
     spec:
       containers:
-      - image: "vimal13/apache-webserver-php"
+      - image: "pawnikhanna/web_server:v1"
         name: "httpd"
         ports:
          - containerPort: 30007
