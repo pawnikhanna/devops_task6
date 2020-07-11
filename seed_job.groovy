@@ -28,14 +28,14 @@ description ("Job2")
 steps{
 shell("""
 if kubectl get pods | grep httpd
-	then
-	echo "service is running"
-	else
-	kubectl create -f /root/web/deployment.yml
-	sleep 20
-	fi
-	POD=$(kubectl get pod -l app=httpd -o jsonpath="{.items[0].metadata.name}")
-	kubectl cp /root/web/*.html $POD:/var/www/html/ """)
+then
+echo "service is running"
+else
+kubectl create -f /root/web/deployment.yml
+sleep 20
+fi
+POD=$(kubectl get pod -l app=httpd -o jsonpath="{.items[0].metadata.name}")
+kubectl cp /root/web/*.html $POD:/var/www/html/ """)
 }
 triggers {
    upstream('task6_Job1', 'SUCCESS')
