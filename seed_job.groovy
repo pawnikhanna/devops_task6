@@ -4,7 +4,7 @@ job('task6_Job1') {
         	github('pawnikhanna/task6_webcode','master')
     }
     steps {
-       		shell("cp * -vrf /home/jenkins") 
+       		shell("cp * -vrf /root/web") 
      	}
   	triggers {
         	scm('* * * * *')
@@ -33,7 +33,7 @@ job('task6_Job2') {
                  			kubectl create -f Deployment.yml
     			 	fi
     			 	POD=$(kubectl get pod -l app=httpd -o jsonpath="{.items[0].metadata.name}")
-    			 	kubectl cp /home/jenkins/index.php ${POD}:/var/www/html
+    			 	kubectl cp /root/web/index.php ${POD}:/var/www/html
 			fi
 			''') 
      		}
