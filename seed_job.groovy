@@ -53,7 +53,7 @@ job("task6_Job3") {
 	        }
 	    }
 	steps {
-		shell("""status=\$(curl -sL -w "%{http_code}" -I "http://192.168.99.100:30001" -o /dev/null)
+		shell("""status=\$(curl -sL -w "%{http_code}" -I "http://192.168.99.100:32351" -o /dev/null)
 if [[ \$status == 200 ]]
 then
 exit 0
